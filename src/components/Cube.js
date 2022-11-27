@@ -3,17 +3,19 @@ import { useFrame } from 'react-three-fiber';
 import { Mesh } from 'three';
 
 
-const Cube = () => {
+const Cube = ( {color, rotationVelocity} ) => {
     // const meshRef = useRef<Mesh>(null);
     const meshRef = useRef()
-    useEffect(() => console.log(meshRef), [])
+    useEffect(() => 
+        console.log(meshRef)
+    ,[])
 
      useFrame(() => {
         if(!meshRef){
             return
         }
-        meshRef.current.rotation.x += 0.02;
-        meshRef.current.rotation.y += 0.02;
+        meshRef.current.rotation.x += rotationVelocity;
+        meshRef.current.rotation.y += rotationVelocity;
     })
 
     return (

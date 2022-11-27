@@ -6,6 +6,7 @@ import { Canvas, useFrame } from 'react-three-fiber';
 import Cube from './Cube';
 import Sphere from './Sphere'
 import { GEOMETRY_FORMS } from '../CONSTANTS';
+import { OrbitControls } from '@react-three/drei';
 
 const SceneComponent = () => {
     const [geometryArray, setGeometryArray] = useState(GEOMETRY_FORMS);
@@ -25,12 +26,12 @@ const SceneComponent = () => {
 
             {geometryArray.length > 0 && geometryArray.map(geometry => (
                   <>
-                    {geometry.type === 'cube' && <Cube key={geometry.id} color={geometry.color} rotationVelocity={geometry.rotationVelocity}/>}
-                    {geometry.type === 'sphere' && <Sphere key={geometry.id} color={geometry.color} rotationVelocity={geometry.rotationVelocity}/>}
+                    {geometry.type === 'cube' && <Cube key={geometry.id} color={geometry.color} position={geometry.position} rotationVelocity={geometry.rotationVelocity}/>}
+                    {geometry.type === 'sphere' && <Sphere key={geometry.id} color={geometry.color} position={geometry.position} rotationVelocity={geometry.rotationVelocity}/>}
                   </>
                ))
             } 
-                
+                <OrbitControls/>
             
             {/* <Cube color={'green'} rotationVelocity={0.02}/> */}
 

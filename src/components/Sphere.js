@@ -3,7 +3,7 @@ import { useFrame } from 'react-three-fiber';
 import { Mesh } from 'three';
 
 
-const Sphere = ({color, rotationVelocity }) => {
+const Sphere = ({color, rotationVelocity, position }) => {
     // const meshRef = useRef<Mesh>(null);
     const meshRef = useRef()
     useEffect(() => 
@@ -19,8 +19,8 @@ const Sphere = ({color, rotationVelocity }) => {
     })
 
     return (
-        <mesh position={[0,0,0]} ref={meshRef}>
-            <sphereGeometry args={[3,3,3]}/>
+        <mesh position={position} ref={meshRef}>
+            <sphereGeometry args={[2,2,2]}/>
             <meshNormalMaterial color={color ?? 'blue'}/>
         </mesh>
 

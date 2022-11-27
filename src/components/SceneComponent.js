@@ -3,11 +3,10 @@ import React,{useRef, useEffect, useState} from 'react'
 // import { Scene, PerspectiveCamera, WebGL3DRenderTarget } from 'three';
 // import CreateEscene from '../hooks/createEscene';
 import { Canvas, useFrame } from 'react-three-fiber';
-import Cube from './Cube';
-import Sphere from './Sphere'
 import { GEOMETRY_FORMS } from '../CONSTANTS';
 import { OrbitControls } from '@react-three/drei';
 import Camera from './Camera';
+import Geometry from './Geometry';
 
 const SceneComponent = () => {
     const [geometryArray, setGeometryArray] = useState(GEOMETRY_FORMS);
@@ -25,13 +24,10 @@ const SceneComponent = () => {
             <directionalLight color="red" position={[0, 0, 5]} />
 
             {geometryArray.length > 0 && geometryArray.map(geometry => (
-                  <>
-                    {geometry.type === 'cube' && <Cube key={geometry.id} color={geometry.color} position={geometry.position} rotationVelocity={geometry.rotationVelocity}/>}
-                    {geometry.type === 'sphere' && <Sphere key={geometry.id} color={geometry.color} position={geometry.position} rotationVelocity={geometry.rotationVelocity}/>}
-                  </>
-               ))
-            } 
-                <OrbitControls/>
+                <Geometry key={geometry.id} color={geometry.color} position={geometry.position} rotationVelocity={geometry.rotationVelocity} type={geometry.type}/>
+            ))}
+        
+            <OrbitControls/>
             
             {/* <Cube color={'green'} rotationVelocity={0.02}/> */}
 

@@ -7,6 +7,7 @@ import Cube from './Cube';
 import Sphere from './Sphere'
 import { GEOMETRY_FORMS } from '../CONSTANTS';
 import { OrbitControls } from '@react-three/drei';
+import Camera from './Camera';
 
 const SceneComponent = () => {
     const [geometryArray, setGeometryArray] = useState(GEOMETRY_FORMS);
@@ -17,9 +18,8 @@ const SceneComponent = () => {
     // Gl render to modify toneMapping, encoding, pixelRatio, etc
         <Canvas
             // gl={{toneMapping: ASESFilmicTopMapping}}
-            camera={{position: [0,4,8]}}
-
         >
+            <Camera/>
             <ambientLight/>
             <pointLight position={[10,10,10]} />
             <directionalLight color="red" position={[0, 0, 5]} />
@@ -36,6 +36,7 @@ const SceneComponent = () => {
             {/* <Cube color={'green'} rotationVelocity={0.02}/> */}
 
         </Canvas>
+
     );
 }
 

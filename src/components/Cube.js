@@ -23,9 +23,15 @@ const Cube = ( {color, rotationVelocity} ) => {
             <boxGeometry args={[2,2,2]}/>
             {/* <sphereGeometry args={[3,3,3]}/> */}
             {/* <octahedronGeometry args={[2,2,2]}/> */} 
-            <meshStandardMaterial />
+            <meshStandardMaterial color={color ?? 'blue'}/>
             {/* <meshNormalMaterial/> */}
             {/* <meshBasicMaterial/> */}
+            {/* <meshBasicMaterial attachArray="material" color="red" />
+            <meshBasicMaterial attachArray="material" color="brown" />
+            <meshBasicMaterial attachArray="material" color="yellow" />
+            <meshBasicMaterial attachArray="material" color="pink" />
+            <meshBasicMaterial attachArray="material" color="black" />
+            <meshBasicMaterial attachArray="material" color="blue" /> */}
         </mesh>
 
     )

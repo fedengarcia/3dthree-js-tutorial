@@ -8,17 +8,17 @@ export const GEOMETRY_FORMS = [
     },
     {
         id: '02',
-        type: 'sphere',
+        type: 'cube',
         rotationVelocity: 0.02,
         color: 'blue',
         position: [3,0,0]
     },
     {
         id: '03',
-        type: 'torus',
+        type: 'cube',
         rotationVelocity: 0.00,
         color: 'red',
-        position: [-3,0,5]
+        position: [6,0,0]
     },
     // {
     //     id: '03',
